@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} font-sans antialiased`}
       >
-        <div className=" mt-27  md:mt-44">
+        <div className=" mt-27  md:mt-30">
           {children}
         </div>
       </body>

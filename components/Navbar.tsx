@@ -6,9 +6,9 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { IoMenu, IoClose } from "react-icons/io5";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import ProductBar from './ProductBar';
-import SolutionsBar from './SolutionsBar';
-import ResourcesBar from './ResourcesBar';
+import ProductBar from './navList/ProductBar';
+import SolutionsBar from './navList/SolutionsBar';
+import ResourcesBar from './navList/ResourcesBar';
 
 export default function Navbar() {
 
@@ -79,7 +79,7 @@ export default function Navbar() {
             </section>
 
             {/* Navigation */}
-            <nav className=' max-w-7xl mx-auto px-5   sm:px-10   bg-white' >
+            <nav className=' max-w-7xl mx-auto px-5 sm:px-10 bg-white' >
                 <div className="flex items-center justify-between py-4 w-ful">
                     {/* Logo */}
                     <Link href="/">
