@@ -1,37 +1,34 @@
 "use client";
 
-import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { IoMenu, IoClose } from "react-icons/io5";
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import ProductBar from './navList/ProductBar';
-import SolutionsBar from './navList/SolutionsBar';
-import ResourcesBar from './navList/ResourcesBar';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import ProductBar from "./navList/ProductBar";
+import SolutionsBar from "./navList/SolutionsBar";
+import ResourcesBar from "./navList/ResourcesBar";
 
 export default function Navbar() {
-
     const pathname = usePathname();
-    const [openMenu, setOpenMenu] = useState<string | null>(null);
+
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
     const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+    const [isVisible, setIsVisible] = useState(true);
 
     const lastScrollY = useRef(0);
 
     const desktopRef = useRef<HTMLDivElement>(null);
     const mobileRef = useRef<HTMLDivElement>(null);
 
-    const toggleMenu = (menu: string) => {
-        setOpenMenu(openMenu === menu ? null : menu);
-    };
+    const TOP_BAR_HEIGHT = 48; // height of top section
 
     const toggleMobileDropdown = (menu: string) => {
         setMobileDropdown(mobileDropdown === menu ? null : menu);
     };
 
-    //  Close dropdowns and mobile menu when clicking outside
+    // Close menus on outside click
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             const target = event.target as Node;
@@ -41,24 +38,26 @@ export default function Navbar() {
                 mobileRef.current &&
                 !mobileRef.current.contains(target)
             ) {
-                setOpenMenu(null);
                 setMobileOpen(false);
             }
         };
+
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    // Hide navbar when scrolling down, show when scrolling up
+    // Scroll behavior
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
+
             if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-                setIsVisible(false); // hide navbar
+                setIsVisible(false);
             } else {
-                setIsVisible(true); // show navbar
+                setIsVisible(true);
             }
-            lastScrollY.current = currentScrollY; // persist scroll position
+
+            lastScrollY.current = currentScrollY;
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -66,16 +65,20 @@ export default function Navbar() {
     }, []);
 
     return (
-        <div className='fixed top-0 left-0 w-full z-50 bg-white border-b border-white/20 shadow-md '>
+        <div
+            className="fixed top-0 left-0 w-full z-50 bg-white border-b border-white/20 shadow-md transition-transform duration-500"
+            style={{
+                transform: isVisible ? "translateY(0px)" : `translateY(-${TOP_BAR_HEIGHT}px)`,
+            }}
+        >
             {/* Top Section */}
-            <section className={` py-2 bg-[#f8f9fb] ${isVisible ? "translate-y-0" : "-translate-y-full"} transition-transform duration-500`}>
-                <div className=' max-w-7xl mx-auto  px-5 sm:px-10'>
-                    <div className=' flex items-center gap-6 justify-between  md:justify-end'>
+            <section className="h-12 py-2 bg-[#f8f9fb]">
+                <div className="max-w-7xl mx-auto px-5 sm:px-10 h-full">
+                    <div className="flex items-center gap-6 justify-between md:justify-end h-full">
                         <p>English</p>
                         <button>Talk to sales</button>
                     </div>
                 </div>
-
             </section>
 
             {/* Navigation */}
@@ -83,21 +86,24 @@ export default function Navbar() {
                 <div className="flex items-center justify-between py-4 w-ful">
                     {/* Logo */}
                     <Link href="/">
-                        <Image
+                        {/* <Image
                             src="/images/logo2.png"
                             width={1000}
                             height={1000}
                             alt="logo"
                             className="h-auto  w-30 sm:w-40  md:w-42"
-                        />
+                        /> */}
+                        <p className="text-[38px] leading-[1.2] font-bold text-center text-[#0b3558]">
+                            SeraniAi
+                        </p>
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div
+                    {/* <div
                         ref={desktopRef}
                         className="hidden lg:flex flex-row items-center gap-4  xl:gap-8 text-textcol font-medium"
                     >
-                        {/* Product Dropdown */}
+                      
                         <div className="relative group">
                             <button
                                 className="flex items-center rounded-lg gap-2 hover:text-primary text-base leading-relaxed font-medium group-hover:bg-[#f0f3f8] text-[16px] py-1 px-2 bg-transparent transition-colors duration-300 ease-in-out"
@@ -106,11 +112,9 @@ export default function Navbar() {
                                 <MdKeyboardArrowDown className="text-[20px] transition-transform duration-300 group-hover:rotate-180 " />
                             </button>
                             <span className="absolute -bottom-4 left-0 w-0 h-0.5 bg-[#006BFF] transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                            {/* Dropdown Panel */}
                             <ProductBar />
                         </div>
 
-                        {/* Solutions Dropdown */}
                         <div className="relative group">
                             <button
                                 className="flex items-center rounded-lg gap-2 hover:text-primary text-base leading-relaxed font-medium group-hover:bg-[#f0f3f8] text-[16px] py-1 px-2 bg-transparent transition-colors duration-300 ease-in-out"
@@ -119,30 +123,28 @@ export default function Navbar() {
                                 <MdKeyboardArrowDown className="text-[20px] transition-transform duration-300 group-hover:rotate-180 " />
                             </button>
                             <span className="absolute -bottom-4 left-0 w-0 h-0.5 bg-[#006BFF] transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                            {/* Dropdown Panel */}
+             
                             <SolutionsBar />
 
                         </div>
-
-                        {/* Resources Dropdown */}
+                  
                         <div className="relative group">
                             <button className="flex items-center rounded-lg gap-2 hover:text-primary text-base leading-relaxed font-medium group-hover:bg-[#f0f3f8] text-[16px] py-1 px-2 bg-transparent transition-colors duration-300 ease-in-out">
                                 Resources
                                 <MdKeyboardArrowDown className="text-[20px] transition-transform duration-300 group-hover:rotate-180 " />
                             </button>
                             <span className="absolute -bottom-4 left-0 w-0 h-0.5 bg-[#006BFF] transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                            {/* Dropdown Panel */}
+                        
                             <ResourcesBar />
                         </div>
 
-                        {/* Pricing Link */}
                         <div className="relative group">
                             <Link href="/pricing" className=" font-medium rounded-lg hover:text-primary text-[16px] hover:bg-[#f0f3f8] py-1 px-2 bg-transparent transition-colors duration-300 ease-in-out">
                                 Pricing
                             </Link>
                             <span className="absolute -bottom-4 left-0 w-0 h-0.5 bg-[#006BFF] transition-all duration-300 ease-in-out group-hover:w-full"></span>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className=' flex items-center gap-6'>
                         <button className=' hidden md:block rounded-sm text-[18px] lg:text-[16px] py-2.5 px-4.5 bg-[#f8f9fb] lg:bg-white'>

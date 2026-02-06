@@ -116,3 +116,18 @@ body {
 .animate-circles {
   animation: circlesPath 10s ease-in-out infinite alternate;
 }
+
+
+
+@keyframes trust-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-trust-marquee {
+  animation: trust-marquee 30s linear infinite;
+}
