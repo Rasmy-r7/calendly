@@ -82,20 +82,18 @@ export default function Navbar() {
             </section>
 
             {/* Navigation */}
-            <nav className=' max-w-7xl mx-auto px-5 sm:px-10 bg-white' >
+            <nav className=' max-w-7xl mx-auto px-5 sm:px-10 bg-white ' >
                 <div className="flex items-center justify-between py-4 w-ful">
                     {/* Logo */}
                     <Link href="/">
-                        {/* <Image
-                            src="/images/logo2.png"
+                        <Image
+                            src="/images/SeraniAi.png"
                             width={1000}
                             height={1000}
                             alt="logo"
-                            className="h-auto  w-30 sm:w-40  md:w-42"
-                        /> */}
-                        <p className="text-[38px] leading-[1.2] font-bold text-center text-[#0b3558]">
-                            SeraniAi
-                        </p>
+                            className="h-auto  w-30 sm:w-40  md:w-45"
+                        />
+
                     </Link>
 
                     {/* Desktop Menu */}
@@ -151,13 +149,13 @@ export default function Navbar() {
                             Log in
                         </button>
                         <button
-                            className="inline-flex items-center justify-center gap-2 cursor-pointer px-4 py-2.5 text-[12px]  sm:text-[16px] leading-[1.4] font-semibold text-white bg-[rgb(0,107,255)]  border border-[rgb(0,107,255)]  rounded-lg  transition-all duration-200 ease-linear relative   opacity-100 text-center hover:bg-[rgb(0,78,186)] hover:border-[rgb(0,78,186)]"
+                            className="inline-flex items-center justify-center gap-2 cursor-pointer px-4 py-2.5 text-[12px]  sm:text-[16px] leading-[1.4] font-semibold text-white bg-[#2C7A7B]  border border-[#2C7A7B]  rounded-lg  transition-all duration-200 ease-linear relative   opacity-100 text-center"
                         >
                             Get Started
                         </button>
-                        <div className="block lg:hidden text-primary text-4xl">
+                        {/* <div className="block lg:hidden text-primary text-4xl">
                             <IoMenu onClick={() => setMobileOpen(prev => !prev)} />
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -310,7 +308,7 @@ export default function Navbar() {
                         </button>
 
                         {/* Get Started Button */}
-                        <button className="text-white bg-[rgb(0,107,255)] font-semibold px-5 py-2 rounded-lg hover:bg-[rgb(0,78,186)] transition w-full mt-2">
+                        <button className="text-white bg-[#2C7A7B] font-semibold px-5 py-2 rounded-lg hover:bg-[#2C7A7B] transition w-full mt-2">
                             Get Started
                         </button>
                     </div>

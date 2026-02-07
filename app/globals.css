@@ -65,7 +65,7 @@ body {
 /* Triangle floating along half-circle path */
 @keyframes trianglePath {
   0% {
-    transform: translate(0px, 0px) rotate(0deg) scale(1);
+    transform: translate(-200px, -200px) rotate(0deg) scale(1);
   }
 
   25% {
@@ -73,7 +73,7 @@ body {
   }
 
   50% {
-    transform: translate(-40px, 200px) rotate(30deg) scale(1.1);
+    transform: translate(-40px, 200px) rotate(20deg) scale(1.1);
   }
 
   75% {
@@ -83,8 +83,8 @@ body {
   100% {
     transform: translate(0px, 400px) rotate(0deg) scale(1);
   }
-
 }
+
 
 .animate-triangle {
   animation: trianglePath 8s ease-in-out infinite alternate;
@@ -93,7 +93,7 @@ body {
 /* Circles floating along half-circle path */
 @keyframes circlesPath {
   0% {
-    transform: translate(0px, 400px) rotate(0deg) scale(1);
+    transform: translate(400px, 400px) rotate(0deg) scale(1);
   }
 
   25% {
@@ -123,6 +123,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }

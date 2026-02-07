@@ -137,7 +137,7 @@ export default function SchedulingSection() {
                     <p className="text-[#476788] text-md md:text-xl max-w-200 mx-auto mb-8">
                         Let Serani AI handle the reminders while you move through your day with ease.
                     </p>
-                    <button className="bg-[#006bff] text-white px-4.5 py-2.5 rounded-lg font-semibold text-[18px] hover:bg-[#0056D2] transition-colors">
+                    <button className="bg-[#2C7A7B] text-white px-4.5 py-2.5 rounded-lg font-semibold text-[18px] hover:bg-[#0056D2] transition-colors">
                         Start Free Today
                     </button>
                 </div>

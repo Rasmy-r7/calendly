@@ -49,9 +49,16 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="sm:col-span-2 lg:col-span-4">
             <Link href="/" className="inline-block mb-4">
-              <h2 className="text-[32px] leading-[1.2] font-bold text-[#0b3558]">
-                Serani AI
-              </h2>
+
+              <Image
+                src="/images/SeraniAi.png"
+                width={1000}
+                height={1000}
+                alt="logo"
+                className="h-auto  w-30 sm:w-40  md:w-45"
+              />
+
+
             </Link>
             <p className="text-[#476788] text-[16px] leading-relaxed mb-6">
               Your personal AI assistant that tracks tasks and reminds you until they&apos;re done. Never forget important tasks again.
@@ -60,7 +67,7 @@ export default function Footer() {
             {/* App Download Buttons */}
             <div className="flex flex-col pt-4 max-w-fit">
               <div className="flex flex-col gap-4">
-                <button className="inline-flex items-center justify-start gap-4 px-4.5 py-2.5 text-[16px] font-semibold text-white bg-[#006BFF] border border-[#006BFF] rounded-lg transition-all">
+                <button className="inline-flex items-center justify-start gap-4 px-4.5 py-2.5 text-[16px] font-semibold text-white bg-[#2C7A7B] border border-[#2C7A7B] rounded-lg transition-all">
                   <Image
                     src="/images/google-play.png"
                     width={1000}
@@ -71,7 +78,7 @@ export default function Footer() {
                   <span>Get it on Google Play</span>
                 </button>
 
-                <button className="inline-flex items-center justify-start gap-4 px-4.5 py-2.5 text-[16px] font-semibold text-white bg-[#0b3558] border border-[#0b3558] rounded-lg transition-all">
+                <button className="inline-flex items-center justify-start gap-4 px-4.5 py-2.5 text-[16px] font-semibold text-white bg-[#2C4B7B] border border-[#2C4B7B] rounded-lg transition-all">
                   <Image
                     src="/images/app-store.png"
                     width={1000}
@@ -153,11 +160,11 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-       
+
       </div>
 
       {/* Bottom Section */}
-      <div className="bg-[#006bff]">
+      <div className="bg-[#2C7A7B]">
         <div className="max-w-7xl mx-auto py-6 px-5 sm:px-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}

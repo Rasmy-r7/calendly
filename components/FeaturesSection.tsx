@@ -114,7 +114,7 @@ export default function FeaturesSection() {
                         Unlike traditional task apps, our Serani AI assistant understands your tasks, priorities, and timelines.
                         It reminds you before things are forgotten, follows up when needed, and helps you stay on track without constant checking.
                     </p>
-                    <button className="bg-[#006bff] text-white px-4.5 py-2.5 rounded-lg font-semibold text-[18px] hover:bg-[#0056D2] transition-colors">
+                    <button className="bg-[#2C7A7B] text-white px-4.5 py-2.5 rounded-lg font-semibold text-[18px] hover:bg-[#0056D2] transition-colors">
                         Sign up for free
                     </button>
                 </div>

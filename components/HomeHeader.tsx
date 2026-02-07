@@ -32,7 +32,7 @@ export default function HomeHeader() {
 
                         <div className="flex flex-col pt-4 max-w-fit mx-auto lg:mx-0">
                             <div className="flex flex-col gap-4">
-                                <button className="inline-flex items-center justify-start gap-4 px-4.5 py-2.5 text-[16px] sm:text-[18px] font-semibold text-white bg-[#006BFF] border border-[#006BFF] rounded-lg transition-all">
+                                <button className="inline-flex items-center justify-start gap-4 px-4.5 py-2.5 text-[16px] sm:text-[18px] font-semibold text-white bg-[#2C7A7B] border border-[#2C7A7B] rounded-lg transition-all">
                                     <Image
                                         src="/images/google-play.png"
                                         width={1000}
@@ -44,7 +44,7 @@ export default function HomeHeader() {
                                     <span></span>
                                 </button>
 
-                                <button className="inline-flex items-center justify-start gap-4 px-4.5 py-2.5 text-[16px] sm:text-[18px] font-semibold text-white bg-[#0b3558] border border-[#0b3558] rounded-lg transition-all">
+                                <button className="inline-flex items-center justify-start gap-4 px-4.5 py-2.5 text-[16px] sm:text-[18px] font-semibold text-white bg-[#2C4B7B] border border-[#2C4B7B] rounded-lg transition-all">
                                     <Image
                                         src="/images/app-store.png"
                                         width={1000}
@@ -112,11 +112,11 @@ export default function HomeHeader() {
 
             {/* Shapes */}
             <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
-                <div className="absolute left-150 top-0 w-150 h-150 bg-[#e55cff] clip-triangle animate-triangle rounded-2xl" />
+                <div className="absolute left-200 top-0 w-150 h-150 bg-[#e55cff] clip-triangle animate-triangle" />
 
-                <div className="absolute left-250 bottom-100 w-32 h-16 animate-circles">
-                    <div className="absolute w-100 h-100 bg-[#0099ff] rounded-full opacity-80 right-0" />
-                    <div className="absolute w-100 h-100 bg-[#0099ff] rounded-full opacity-80 left-0" />
+                <div className="absolute left-280 bottom-100 w-32 h-16 animate-circles">
+                    <div className="absolute w-100 h-100 bg-[#2C7A7B] rounded-full opacity-80 right-0" />
+                    <div className="absolute w-100 h-100 bg-[#2C7A7B] rounded-full opacity-80 left-0" />
                 </div>
             </div>
         </div>

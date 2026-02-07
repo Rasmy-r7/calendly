@@ -182,8 +182,8 @@ export default function PricingSection() {
                             {/* CTA Button */}
                             <button
                                 className={`w-full py-2.5 px-4 leading-[1.4] rounded-lg font-semibold text-[18px] mb-8 transition-all ${plan.buttonStyle === 'blue'
-                                    ? 'bg-[#006BFF] text-white hover:bg-[#0056D2]'
-                                    : 'bg-[#0b3558] text-white hover:bg-[#0a2d47]'
+                                    ? 'bg-[#2C7A7B] text-white hover:bg-[#0056D2]'
+                                    : 'bg-[#2C4B7B] text-white hover:bg-[#0a2d47]'
                                     }`}
                             >
                                 {plan.buttonText}
